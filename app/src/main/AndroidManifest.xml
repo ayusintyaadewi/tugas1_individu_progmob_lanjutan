@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.asus.curdsederhana"
-    android:versionCode="1"
-    android:versionName="1.0">
+    android:versionCode="3"
+    android:versionName="1.0.0.4a">
+
+    <uses-permission
+        android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <uses-sdk
         android:minSdkVersion="8"
-        android:targetSdkVersion="15" />
+        android:targetSdkVersion="16" />
 
     <application
-
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        android:allowBackup="true"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name="com.example.asus.curdsederhana.CreateData"
             android:label="@string/title_activity_main" >
         </activity>
+
         <activity
             android:name=".Menu"
             android:label="@string/title_activity_main" >
@@ -24,6 +32,16 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ViewData"
+            android:label="@string/title_activity_main">
+        </activity>
+
+        <activity
+            android:name=".EditData"
+            android:label="@string/title_activity_main" >
         </activity>
     </application>
 

@@ -18,7 +18,7 @@ public class DBDataSource {
 
     //ambil semua nama kolom
     private String[] allColumns = { DBHelper.COLUMN_ID,
-            DBHelper.COLUMN_NAMA, DBHelper.COLUMN_ALAMAT,DBHelper.COLUMN_TELEPON};
+            DBHelper.COLUMN_NAMA, DBHelper.COLUMN_ALAMAT, DBHelper.COLUMN_TELEPON};
 
     //DBHelper diinstantiasi pada constructor
     public DBDataSource(Context context)
@@ -91,5 +91,65 @@ public class DBDataSource {
 
         //kembalikan sebagai objek barang
         return konsumen;
+    }
+
+    //mengambil semua data barang
+    public ArrayList<Konsumen> getAllKonsumen() {
+        ArrayList<Konsumen> daftarKonsumen = new ArrayList<Konsumen>();
+
+        // select all SQL query
+        Cursor cursor = database.query(DBHelper.TABLE_NAME,
+                allColumns, null, null, null, null, null);
+
+        // pindah ke data paling pertama
+        cursor.moveToFirst();
+        // jika masih ada data, masukkan data konsumen ke
+        // daftar konsumen
+        while (!cursor.isAfterLast()) {
+            Konsumen konsumen = cursorToKonsumen(cursor);
+            daftarKonsumen.add(konsumen);
+            cursor.moveToNext();
+        }
+        // Make sure to close the cursor
+        cursor.close();
+        return daftarKonsumen;
+    }
+
+    //ambil satu konsumen sesuai id
+    public Konsumen getKonsumen(long id)
+    {
+        Konsumen konsumen = new Konsumen(); //inisialisasi barang
+        //select query
+        Cursor cursor = database.query(DBHelper.TABLE_NAME, allColumns, "_id ="+id, null, null, null, null);
+        //ambil data yang pertama
+        cursor.moveToFirst();
+        //masukkan data cursor ke objek konsumen
+        konsumen = cursorToKonsumen(cursor);
+        //tutup sambungan
+        cursor.close();
+        //return konsumen
+        return konsumen;
+    }
+
+    //update barang yang diedit
+    public void updateKonsumen(Konsumen k)
+    {
+        //ambil id barang
+        String strFilter = "_id=" + k.getId();
+        //memasukkan ke content values
+        ContentValues args = new ContentValues();
+        //masukkan data sesuai dengan kolom pada database
+        args.put(DBHelper.COLUMN_NAMA, k.getNama_konsumen());
+        args.put(DBHelper.COLUMN_ALAMAT, k.getAlamat_konsumen());
+        args.put(DBHelper.COLUMN_TELEPON, k.getTelepon_konsumen() );
+        //update query
+        database.update(DBHelper.TABLE_NAME, args, strFilter, null);
+    }
+
+    // delete barang sesuai ID
+    public void deleteKonsumen(long id)
+    {
+        String strFilter = "_id=" + id;
+        database.delete(DBHelper.TABLE_NAME, strFilter, null);
     }
 }

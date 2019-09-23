@@ -62,10 +62,12 @@ public class CreateData extends Activity implements OnClickListener{
                 konsumen = dataSource.createKonsumen(nama, alamat, telepon);
 
                 //konfirmasi kesuksesan
-                Toast.makeText(this, "masuk Konsumen\n" +
-                        "nama" + konsumen.getNama_konsumen() +
-                        "alamat" + konsumen.getAlamat_konsumen() +
-                        "telepon" + konsumen.getTelepon_konsumen(), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "data berhasil dimasukkan"
+//                        +
+//                        "nama" + konsumen.getNama_konsumen() +
+//                        "alamat" + konsumen.getAlamat_konsumen() +
+//                        "telepon" + konsumen.getTelepon_konsumen()
+                        , Toast.LENGTH_LONG).show();
                 break;
         }
     }

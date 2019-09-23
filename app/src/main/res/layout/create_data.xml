@@ -4,16 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#F0F8FF">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TAMBAH DATA KONSUMEN"
+        android:textColor="#000000"
+        android:layout_marginLeft="60dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:textSize="22sp"
+        >
+
+    </TextView>
     <EditText
         android:id="@+id/nama_konsumen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+        android:layout_marginLeft="65dp"
         android:inputType="text"
-        android:hint="Nama"
-        android:ems="10" >
+        android:hint="Nama Konsumen"
+        android:ems="12" >
 
         <requestFocus />
     </EditText>
@@ -23,9 +37,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+        android:layout_marginLeft="65dp"
         android:inputType="text"
-        android:hint="Alamat"
-        android:ems="10" >
+        android:hint="Alamat Konsumen"
+        android:ems="12" >
 
         <requestFocus />
     </EditText>
@@ -36,8 +51,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:inputType="number"
-        android:hint="Telepon"
-        android:ems="10" >
+        android:hint="Telepon Konsumen"
+        android:layout_marginLeft="65dp"
+        android:ems="12" >
 
         <requestFocus />
     </EditText>
@@ -46,8 +62,8 @@
         android:id="@+id/buttom_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Submit"
-        android:layout_marginLeft="150dp"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="40dp"
+        android:text="Submit" />
 
 </LinearLayout>

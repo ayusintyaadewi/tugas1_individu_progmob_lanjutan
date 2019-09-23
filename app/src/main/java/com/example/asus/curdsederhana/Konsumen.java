@@ -45,6 +45,6 @@ public class Konsumen {
 
     @Override
     public String toString(){
-        return "Konsumen " + nama_konsumen +" "+ alamat_konsumen +" "+ telepon_konsumen;
+        return "\n" + "Nama      : " + nama_konsumen + "\n" + "Alamat    : " + alamat_konsumen + "\n" + "Telepon  : " + telepon_konsumen + "\n";
     }
 }

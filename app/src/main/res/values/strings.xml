@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">AppKonsumen</string>
     <string name="nama_app">TUGAS1</string>
-    <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">AppKonsumen</string>
     <string name="barang_hint">Nama Konsumen</string>
@@ -10,5 +9,10 @@
     <string name="tombol_submit">Submit</string>
     <string name="tombol_tambah">Tambah Data</string>
     <string name="tombol_lihat">Lihat Data</string>
+    <string name="tombol_edit">Save</string>
+    <string name="tombol_cancel">Cancel</string>
+    <string name="tombol_dialog_edit">Edit</string>
+    <string name="tombol_dialog_delete">Delete</string>
     <string name="title_view">Data Konsumen</string>
+    <string name="title_edit">Etit Konsumen (ID) : </string>
 </resources>

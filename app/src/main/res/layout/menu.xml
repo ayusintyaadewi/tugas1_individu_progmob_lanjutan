@@ -3,17 +3,20 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#F0F8FF">
 
     <TextView
         android:id="@+id/nama_app"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:textSize="20sp"
-        android:text="DATA KONSUMEN"
-        />
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="28dp"
+        android:text="Aplikasi CRUD Data Konsumen"
+        android:textColor="	#000000"
+        android:textSize="17sp"/>
 
     <Button
         android:id="@+id/button_tambah"
@@ -21,6 +24,15 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/nama_app"
         android:layout_centerHorizontal="true"
-        android:text="Tambah Data"
+        android:text="ADD DATA"
+        />
+
+    <Button
+        android:id="@+id/button_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_tambah"
+        android:layout_centerHorizontal="true"
+        android:text="VIEW DATA"
         />
 </RelativeLayout>
